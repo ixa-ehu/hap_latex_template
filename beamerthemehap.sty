@@ -1,0 +1,128 @@
+\mode<presentation>
+
+%%%%%%%%%% Color theme %%%%%%%%%%
+
+\definecolor{darkred}{rgb}{0.8,0,0}
+
+% because we use balls, let "rounded" inner theme deal with TOC colors
+\setbeamercolor{section in toc}{}
+\setbeamercolor{subsection in toc}{}
+\setbeamercolor{alerted text}{fg=darkred!80!gray}
+\setbeamercolor*{palette primary}{fg=darkred!60!black,bg=gray!30!white}
+\setbeamercolor*{palette secondary}{fg=darkred!70!black,bg=gray!15!white}
+\setbeamercolor*{palette tertiary}{bg=darkred!80!black,fg=gray!10!white}
+\setbeamercolor*{palette quaternary}{fg=darkred,bg=gray!5!white}
+
+\setbeamercolor*{sidebar}{}
+
+\setbeamercolor*{palette sidebar primary}{fg=darkred!10!black}
+\setbeamercolor*{palette sidebar secondary}{fg=white}
+\setbeamercolor*{palette sidebar tertiary}{fg=darkred!50!black}
+\setbeamercolor*{palette sidebar quaternary}{fg=gray!10!white}
+
+\setbeamercolor*{block body}{bg=normal text.bg!90!black}
+\setbeamercolor*{block body alerted}{bg=normal text.bg!90!black}
+\setbeamercolor*{block body example}{bg=normal text.bg!90!black}
+\setbeamercolor*{block title}{fg=darkred, bg=normal text.bg!60!black}
+\setbeamercolor*{block title alerted}{use={normal text,alerted text},fg=alerted text.fg!75!normal text.fg,bg=normal text.bg!75!black}
+\setbeamercolor*{block title example}{use={normal text,example text},fg=example text.fg!75!normal text.fg,bg=normal text.bg!75!black}
+
+\setbeamercolor{titlelike}{fg=darkred}
+%\setbeamercolor{frametitle}{bg=gray!10!white}
+%\setbeamercolor{frametitle right}{bg=gray!60!white}
+
+\setbeamercolor*{separation line}{}
+\setbeamercolor*{fine separation line}{}
+
+% Itemize
+
+\setbeamercolor{item}{fg=darkred}
+
+% Navigations, misc
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]  
+
+%%%%%%%%%% Presentation %%%%%%%%%%
+
+% Requirement
+\RequirePackage{tikz}
+\RequirePackage{graphicx}
+
+%\setbeamertemplate{footline}{\vspace{5cm}}
+%\setbeamerfont{footline}{size=\fontsize{10}{12}\selectfont}
+\setbeamerfont{date}{series=\mdseries,family=\sffamily,shape=\itshape,parent=normal text}
+
+\setbeamersize{sidebar width left=0.3cm,text margin right=0.5cm}
+
+%%%%%%%%%% Inner theme %%%%%%%%%%
+
+% lists, items, etc
+
+\useinnertheme[shadow=true]{rounded}
+\setbeamertemplate{enumerate items}[default]
+
+% Background
+\setbeamertemplate{background}{
+{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{bgroundhap.png}}
+  % \begin{tikzpicture}
+  % \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  % \fill[color=brown] (0,2) rectangle (\the\paperwidth,\the\paperheight);
+  % \fill[color=orange] (0,0) rectangle(2.95,1.9);
+  % \fill[color=blue!50!cyan!80] (3.05,0) rectangle(\the\paperwidth,1.9);
+  % \ifnum\thepage>1\relax%
+  %  \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  %  \fi
+  % \end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{hap}[1][]
+{
+  \setbeamertemplate{footline}{} 
+   \vskip3cm%
+    \begin{beamercolorbox}[wd=12cm,leftskip=1cm,sep=8pt,#1]{title page header}
+      \usebeamerfont{title}\inserttitle\par%
+    \end{beamercolorbox}%
+    % \vskip0.75cm%
+    % \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{author}
+    %   \usebeamerfont{author}\insertauthor%
+    % \end{beamercolorbox}
+    %\vskip0.1cm%
+    \begin{beamercolorbox}[wd=12cm,leftskip=1cm,sep=8pt,#1]{author}
+      \usebeamerfont{author}\insertauthor%
+    \end{beamercolorbox}
+     \vskip0.2cm%
+    \begin{beamercolorbox}[wd=12cm,leftskip=1cm,sep=8pt,#1]{date}
+      \usebeamerfont{date}\insertdate%
+    \end{beamercolorbox}
+  \vfill
+  \addtocounter{framenumber}{-1}
+}
+
+%%%%%%%%%%  Outer theme %%%%%%%%%%
+
+% % Frame title
+% \defbeamertemplate*{frametitle}{texnwr}[1][]
+% {
+% \vskip1cm%
+%   \begin{beamercolorbox}[wd=\paperwidth,ht=0.1cm]{frametitle}
+%   \begin{tikzpicture}
+%   \useasboundingbox[fill=white](0,0) rectangle(\the\paperwidth,1.2);
+%   \fill[orange] (0,0) rectangle(2.95,1.2);
+%   \fill[blue!50!cyan!80] (3.05,0) rectangle(\the\paperwidth,1.2);
+%    \ifx\insertframesubtitle\@empty%
+%       {\node[anchor=west, white,font=\large] at (3.2,0.61){\insertframetitle};}
+%       \else%
+%       {\node[anchor= west, white,font=\large] at (3.2,0.81){\insertframetitle};%
+%        \node[anchor= west, white,font=\small] at (3.2,0.41){\insertframesubtitle};}%
+%       \fi
+%   \end{tikzpicture}
+%   \end{beamercolorbox}
+% }
+\setbeamertemplate{frametitle}[default]
+\setbeamertemplate{footline}{}
+%\setbeamertemplate{footline}{\parbox[c][1cm][c]{\paperwidth}{\raggedleft\scriptsize\insertdate}}
+%\setbeamertemplate{footline}{\parbox[c][1cm][c]{\paperwidth}{\scriptsize\insertframenumber/\inserttotalframenumber\hspace{0.3cm}\raggedleft\usebeamerfont{date}\insertdate}}
+
+\mode<all>
