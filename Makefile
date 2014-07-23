@@ -1,6 +1,9 @@
 texfiles := $(wildcard *.tex)
 
-all:example.pdf
+all: example.pdf bgroundhap.png
 
 example.pdf : $(texfiles)
-	exit 1
+	@exit 1
+
+bgroundhap.png : irudiak/bgroundhap.xcf
+	@exit 1
