@@ -20,12 +20,29 @@
 \setbeamercolor*{palette sidebar tertiary}{fg=darkred!50!black}
 \setbeamercolor*{palette sidebar quaternary}{fg=gray!10!white}
 
+
+
+
+
 \setbeamercolor*{block body}{bg=normal text.bg!90!black}
-\setbeamercolor*{block body alerted}{bg=normal text.bg!90!black}
-\setbeamercolor*{block body example}{bg=normal text.bg!90!black}
+%% Mikelek aldatuta
+\setbeamercolor*{block body alerted}{bg=red!5!white, fg=black}
+\setbeamercolor*{block body example}{bg=blue!5!white,fg=black}
+
+
 \setbeamercolor*{block title}{fg=darkred, bg=normal text.bg!60!black}
-\setbeamercolor*{block title alerted}{use={normal text,alerted text},fg=alerted text.fg!75!normal text.fg,bg=normal text.bg!75!black}
-\setbeamercolor*{block title example}{use={normal text,example text},fg=example text.fg!75!normal text.fg,bg=normal text.bg!75!black}
+%% Mikelek aldatuta
+\setbeamercolor*{block title alerted}{use=structure,fg=white,bg=red!45!white}
+\setbeamercolor*{block title example}{use=structure,fg=white,bg=blue!45!white}
+
+
+%% Mikelek aldatuta
+\addtobeamertemplate{theorem begin}{%
+  \setbeamercolor{block title}{fg=white,bg=green!75!black}%
+  \setbeamercolor{block body}{fg=black,bg=green!5!white}%
+}{}
+
+
 
 \setbeamercolor{titlelike}{fg=darkred}
 %\setbeamercolor{frametitle}{bg=gray!10!white}
