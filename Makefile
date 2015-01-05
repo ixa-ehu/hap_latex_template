@@ -1,4 +1,4 @@
-texfiles := $(wildcard *.tex)
+texfiles := example.tex
 
 all: example.pdf bgroundhap.png
 
